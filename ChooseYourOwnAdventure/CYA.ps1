@@ -54,6 +54,7 @@ if ($uinput -eq "y"){
 }
 elseif ($uinput -eq "n") {
     Write-Host "COWARD! I HATE YOU! START AGAIN! DO IT BETTER OR I WIL-" -ForegroundColor Red
+    pause
     exit
 }
 else {
@@ -90,6 +91,7 @@ while ($script:hp -cge 1) {
 if($hp -cle 0){
     Write-Host "Oh $name, You died. For nothing. How disapointing" -ForegroundColor Red
     Write-Host "GAME OVER"
+    pause
     exit
 }
 $round = 0
@@ -182,6 +184,7 @@ if ($echo -eq "true") {
         if($hp -cle 0){
              Write-Host "You dont mind if I borrow this skin do you?" -ForegroundColor Yellow
              Write-Host "GAME OVER"
+             pause
             exit
         }
         pause       
@@ -243,6 +246,7 @@ while ($script:hp -cge 1) {
         if($hp -cle 0){
              Write-Host "INSOLENT FOOL HAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHHAHAHA" -ForegroundColor Red
              Write-Host "GAME OVER"
+             pause
             exit
         }
         pause       
