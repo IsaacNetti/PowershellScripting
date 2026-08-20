@@ -2,7 +2,7 @@
 
 # Retreive all files with download date older than 30 days
 function Get-Files {
-    $files = Get-ChildItem -Path "$env:USERPROFILE\Downloads" -File -Recurse | Where-Object {$_.LastWriteTime -lt (Get-Date).AddDays(-30)}
+    $files = Get-ChildItem -Path "$env:USERPROFILE\Downloads" -Force | Where-Object {$_.LastWriteTime -lt (Get-Date).AddDays(-30)}
     return $files
 }
 
@@ -24,7 +24,7 @@ function Remove-Files {
         Write-Progress -Activity "Deleting files" -PercentComplete $completion
 
         # Delete Files
-        Remove-Files -Path $file.Fullname -WhatIf
+        Remove-Item -Path $file.FullName -Recurse -Force
     }
     
 }
@@ -78,4 +78,4 @@ do {
     $response -eq "y"
 )
 
-Read-Host -Prompt "$($file.count) deleted. Press Enter to Exit"
+Read-Host -Prompt "Deleted. Press Enter to Exit"
