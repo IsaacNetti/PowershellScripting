@@ -269,6 +269,7 @@ if($script:ehp -eq 12){
         Write-Host "You Lose because I said so"
         Write-Host "Game Over"
     }
+    pause
     exit
 }
 Write-Host "The Skeletons head clatters to the ground,defeated... right?"
@@ -283,3 +284,4 @@ pause
 Write-Host "You are left alone in a room, staring at a set of large doors, a scythe lays across your lap"
 Write-Host "Your bones ache"
 Write-Host "You win?"
+pause
